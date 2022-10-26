@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,72 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="pomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uLp-eF-gDo">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pomodoro" translatesAutoresizingMaskIntoConstraints="NO" id="omg-qe-fWP">
+                                <rect key="frame" x="145" y="71" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="PjT-1F-fpl"/>
+                                    <constraint firstAttribute="height" constant="100" id="RLh-Fr-wRX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pyr-4r-Juf">
+                                <rect key="frame" x="24" y="251" width="342" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" alpha="0.0" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="vPK-7Z-LS2">
+                                <rect key="frame" x="48" y="341" width="294" height="4"/>
+                            </progressView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3e-X6-fMq">
+                                <rect key="frame" x="0.0" y="201" width="390" height="216"/>
+                                <locale key="locale" localeIdentifier="ko_KR"/>
+                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="RcT-PI-ND1">
+                                <rect key="frame" x="24" y="441" width="342" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmG-tp-O8h">
+                                        <rect key="frame" x="0.0" y="0.0" width="131" height="30"/>
+                                        <state key="normal" title="취소"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FxY-FN-SCO">
+                                        <rect key="frame" x="211" y="0.0" width="131" height="30"/>
+                                        <state key="normal" title="시작"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="I1n-KG-8kF"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RcT-PI-ND1" firstAttribute="top" secondItem="i3e-X6-fMq" secondAttribute="bottom" constant="24" id="2fU-is-TIR"/>
+                            <constraint firstItem="i3e-X6-fMq" firstAttribute="leading" secondItem="uLp-eF-gDo" secondAttribute="leading" id="5Ek-4O-r4O"/>
+                            <constraint firstItem="I1n-KG-8kF" firstAttribute="trailing" secondItem="RcT-PI-ND1" secondAttribute="trailing" constant="24" id="GtC-Rz-n2U"/>
+                            <constraint firstItem="vPK-7Z-LS2" firstAttribute="leading" secondItem="I1n-KG-8kF" secondAttribute="leading" constant="48" id="HeG-Xg-bti"/>
+                            <constraint firstItem="vPK-7Z-LS2" firstAttribute="top" secondItem="Pyr-4r-Juf" secondAttribute="bottom" constant="30" id="JGH-aN-ZZk"/>
+                            <constraint firstItem="Pyr-4r-Juf" firstAttribute="top" secondItem="omg-qe-fWP" secondAttribute="bottom" constant="80" id="NEg-kN-9Bv"/>
+                            <constraint firstItem="Pyr-4r-Juf" firstAttribute="leading" secondItem="I1n-KG-8kF" secondAttribute="leading" constant="24" id="P1P-CB-2jG"/>
+                            <constraint firstItem="I1n-KG-8kF" firstAttribute="trailing" secondItem="Pyr-4r-Juf" secondAttribute="trailing" constant="24" id="PFN-Fk-sLS"/>
+                            <constraint firstItem="RcT-PI-ND1" firstAttribute="leading" secondItem="I1n-KG-8kF" secondAttribute="leading" constant="24" id="Q7e-DU-MZI"/>
+                            <constraint firstItem="Pyr-4r-Juf" firstAttribute="centerX" secondItem="omg-qe-fWP" secondAttribute="centerX" id="TDV-Be-qWM"/>
+                            <constraint firstItem="i3e-X6-fMq" firstAttribute="top" secondItem="omg-qe-fWP" secondAttribute="bottom" constant="30" id="gTZ-WY-zKy"/>
+                            <constraint firstItem="I1n-KG-8kF" firstAttribute="trailing" secondItem="i3e-X6-fMq" secondAttribute="trailing" id="lV7-3C-Hh1"/>
+                            <constraint firstItem="omg-qe-fWP" firstAttribute="centerX" secondItem="uLp-eF-gDo" secondAttribute="centerX" id="q96-ff-jpj"/>
+                            <constraint firstItem="omg-qe-fWP" firstAttribute="top" secondItem="I1n-KG-8kF" secondAttribute="top" constant="24" id="uje-vh-C4L"/>
+                            <constraint firstItem="I1n-KG-8kF" firstAttribute="trailing" secondItem="vPK-7Z-LS2" secondAttribute="trailing" constant="48" id="zs4-hG-6xd"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="4"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pomodoro" width="42.666667938232422" height="42.666667938232422"/>
+    </resources>
 </document>
