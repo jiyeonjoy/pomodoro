@@ -91,10 +91,10 @@ class ViewController: UIViewController {
         self.timerLabel.text = String(format: "%02d:%02d:%02d", hour, minutes, seconds)
         self.progressView.progress = Float(self.currentSeconds) / Float(self.duration)
         UIView.animate(withDuration: 0.5, delay: 0, animations: {
-          self.imageView.transform = CGAffineTransform(rotationAngle: .pi)
+          self.imageView.transform = CGAffineTransform(rotationAngle: .pi) // 180도
         })
         UIView.animate(withDuration: 0.5, delay: 0.5, animations: {
-          self.imageView.transform = CGAffineTransform(rotationAngle: .pi * 2)
+          self.imageView.transform = CGAffineTransform(rotationAngle: .pi * 2) // 360도
         })
         if self.currentSeconds <= 0 {
           AudioServicesPlaySystemSound(1005)
